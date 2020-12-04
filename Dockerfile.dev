@@ -1,10 +1,9 @@
-FROM node:alpine
+sudo: true
+services:
+  - docker
 
-WORKDIR '/app'
+before_install:
+  - docker build -t gbrody/docker -f Dockerfile.dev .
 
-COPY package.json .
-RUN npm install
-
-COPY . .
-
-CMD ["npm", "run", "start"]
+script:
+  - docker run gbrody/docker npm run test -- --coverage
