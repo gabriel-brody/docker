@@ -1,17 +1,10 @@
-{
-  "language": "ruby",
-  "os": [
-    "linux"
-  ],
-  "dist": "xenial",
-  "sudo": true,
-  "services": [
-    "docker"
-  ],
-  "before_install": [
-    "docker build -t gbrody/docker -f Dockerfile.dev ."
-  ],
-  "script": [
-    "docker run gbrody/docker npm run test -- --coverage"
-  ]
-}
+sudo: true
+language: ruby
+services:
+  - docker
+
+before_install:
+  - docker build -t stephengrider/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run stephengrider/docker-react npm run test -- --coverage
