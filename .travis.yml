@@ -11,3 +11,4 @@ before_install:
 
 script:
   - docker run -e CI=true gbrody/docker-react npm run test
+
