@@ -7,8 +7,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t gbrody/docker-react -f Dockerfile.dev .
+  - docker build -t gbrody/nginx -f Dockerfile .
 
 script:
-  - docker run -e CI=true gbrody/docker-react npm run test
+  - docker run -d --name webserver -p 80:80 gbrody/nginx
 

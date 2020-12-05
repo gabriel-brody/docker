@@ -1,10 +1,4 @@
-FROM node:alpine as builder
-WORKDIR '/app'
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-
-FROM nginx
+FROM nginx:latest
+MAINTAINER Gabriel Brody Yamauti
+copy _book/ /usr/share/nginx/html
 EXPOSE 80
-COPY --from=builder /app/build /usr/share/nginx/html
