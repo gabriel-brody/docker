@@ -1,0 +1,12 @@
+- name: Página Inicial
+  link: /
+- name: Lições de Casa
+  link: /homework.html
+- name: Roteiro de estudo
+  link: /roteiro_estudo.html
+- name: Avaliações
+  link: /avaliacoes.html
+- name: Reuniões
+  link: /reunioes.html
+- name: Horário de aulas
+  link: /horario_aulas.html
